@@ -2,7 +2,7 @@
     "name": "document-ai-adapter",
     "env": {
         "GCP_DOCAI_REGION": {
-            "value": "eu",
+            "value": "us",
             "description": "Region (eu or us) where the Document AI form processor is deployed."
         },
         "GCP_DOCAI_PROCESSOR_ID": {
@@ -23,8 +23,8 @@
                 "gcloud services enable appengine.googleapis.com",
                 "gcloud services enable firebase.googleapis.com",
                 "gcloud services enable drive.googleapis.com",
-                "gcloud app create --region=europe-west",
-                "gcloud firestore databases create --region=europe-west",
+                "gcloud app create --region=us",
+                "gcloud firestore databases create --region=us",
                 "PROJECTNUMBER=$(gcloud projects list --filter=\"$(gcloud config get-value project)\" --format=\"value(PROJECT_NUMBER)\") && gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT --member=\"serviceAccount:$PROJECTNUMBER-compute@developer.gserviceaccount.com\" --role='roles/documentai.apiUser'",  
                 "echo $API_KEY"
             ]
